@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Squad</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Monster Squad Logo" class="logo">
+    <nav>
+      <a href="#home" data-bn="হোম" data-en="Home">হোম</a>
+      <a href="#squad" data-bn="টিম" data-en="Squad">টিম</a>
+      <a href="#contact" data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</a>
+      <button id="langBtn" class="lang">English</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <img src="logo.png" alt="Monster Squad" class="hero-logo">
+        <h1 data-bn="MONSTER SQUAD" data-en="MONSTER SQUAD">MONSTER SQUAD</h1>
+        <p data-bn="গেমের জন্য একসাথে, স্কোয়াড হিসেবে আরও শক্তিশালী।"
+           data-en="United by the game. Stronger as a squad.">
+          গেমের জন্য একসাথে, স্কোয়াড হিসেবে আরও শক্তিশালী।
+        </p>
+        <a class="btn" href="#contact" data-bn="টিমের সাথে যোগাযোগ করুন" data-en="Contact the Squad">
+          টিমের সাথে যোগাযোগ করুন
+        </a>
+      </div>
+    </section>
+
+    <section id="squad" class="section">
+      <h2 data-bn="আমাদের টিম" data-en="OUR SQUAD">আমাদের টিম</h2>
+      <p class="muted" data-bn="টিম মেম্বার যোগ বা মুছে ফেলতে নিচের Admin Panel ব্যবহার করুন।"
+         data-en="Use the Admin Panel below to add or remove team members.">
+        টিম মেম্বার যোগ বা মুছে ফেলতে নিচের Admin Panel ব্যবহার করুন।
+      </p>
+
+      <div id="members" class="cards"></div>
+
+      <div class="admin">
+        <h3 data-bn="টিম ম্যানেজমেন্ট" data-en="Team Management">টিম ম্যানেজমেন্ট</h3>
+        <div class="add-form">
+          <input id="memberNameBn" placeholder="নাম (বাংলা)">
+          <input id="memberNameEn" placeholder="Name (English)">
+          <input id="memberRoleBn" placeholder="পদ/রোল (বাংলা)">
+          <input id="memberRoleEn" placeholder="Role (English)">
+          <button class="btn" onclick="addMember()" data-bn="মেম্বার যোগ করুন" data-en="Add Member">মেম্বার যোগ করুন</button>
+        </div>
+        <p class="small" data-bn="নোট: এই ডেমো ভার্সনে সদস্যদের তথ্য এই ব্রাউজারেই সংরক্ষিত হবে।"
+           data-en="Note: In this demo version, member data is saved in this browser.">
+          নোট: এই ডেমো ভার্সনে সদস্যদের তথ্য এই ব্রাউজারেই সংরক্ষিত হবে।
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2 data-bn="মনস্টার স্কোয়াডে যোগাযোগ করুন" data-en="CONTACT MONSTER SQUAD">
+        মনস্টার স্কোয়াডে যোগাযোগ করুন
+      </h2>
+      <p data-bn="যোগ দিতে, খেলতে বা টিমের সাথে যোগাযোগ করতে মেসেজ পাঠান।"
+         data-en="Send a message to join, play, or contact our team.">
+        যোগ দিতে, খেলতে বা টিমের সাথে যোগাযোগ করতে মেসেজ পাঠান।
+      </p>
+      <form onsubmit="sendMessage(event)">
+        <input id="name" type="text" data-bn-placeholder="আপনার নাম" data-en-placeholder="Your name" placeholder="আপনার নাম" required>
+        <input id="phone" type="tel" data-bn-placeholder="ফোন / WhatsApp" data-en-placeholder="Phone / WhatsApp" placeholder="ফোন / WhatsApp" required>
+        <textarea id="message" data-bn-placeholder="আপনার মেসেজ লিখুন..." data-en-placeholder="Write your message..." placeholder="আপনার মেসেজ লিখুন..." required></textarea>
+        <button class="btn" type="submit" data-bn="মেসেজ পাঠান" data-en="Send Message">মেসেজ পাঠান</button>
+      </form>
+      <p id="status"></p>
+    </section>
+  </main>
+
+  <footer>© 2026 Monster Squad</footer>
+  <script src="script.js"></script>
+</body>
+</html>
